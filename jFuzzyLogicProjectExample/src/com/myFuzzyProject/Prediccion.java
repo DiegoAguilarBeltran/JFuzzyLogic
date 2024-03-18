@@ -1,8 +1,12 @@
 package com.myFuzzyProject;
 
 import java.util.ArrayList;
+import java.awt.Component;
 
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
 //Importo las librerias que necesitare, esto gracias al jar que descargamos 
 //llamado jfuzzyLogic.jar y colocamos en la carpeta lib
 import net.sourceforge.jFuzzyLogic.FIS;
@@ -69,6 +73,7 @@ public class Prediccion {
     public static void grafica(String txtCalificacion, String txtGenero, String txtAno, String txtResultado) {
         // Hago lo mismo que en el metodo anterior, convierto esto los string en numeros
         // reales
+        /*
         double calificacion = 0, genero = 0, ano = 0, resultado = 0;
 
         try {
@@ -80,8 +85,9 @@ public class Prediccion {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error al transformar los datos a numeros reales");
         }
+        */
         // Igual que el anterior cargo el archivo fcl
-        String fileName = "recomendacion.fcl";
+        String fileName = "jFuzzyLogicProjectExample\\prueba.fcl";
         FIS fis = FIS.load(fileName, true);
 
         if (fis == null) {
@@ -93,6 +99,7 @@ public class Prediccion {
 
         // Funcion para mostrar las graficas
         JFuzzyChart.get().chart(functionBlock);
+        /*
 
         fis.setVariable("service", 7);
         fis.setVariable("food", 10);
@@ -108,7 +115,8 @@ public class Prediccion {
         Datos prediccion = new Datos(calificacion, genero, ano, resultado);
 
         historial.add(prediccion);
-
+        
+        */
     }
 
 }
